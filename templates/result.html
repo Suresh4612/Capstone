@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Enhancement Result</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #cd9595;
+        }
+
+         h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #image-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #555;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <h1>Image Enhancement Result</h1>
+    <div id="image-container">
+        <div>
+            <h2>Original Image</h2> 
+            <img id="uploaded-image" src="data:image/jpeg;base64,{{ uploaded_image }}" alt="Uploaded Image">
+        </div>
+        
+        <div>
+            <h2>Restored Image</h2>
+            <img id="restored-image" src="{{ restored_image }}" alt="Restored Image">
+        </div>
+        
+        
+    </div>
+    
+</body>
+</html>

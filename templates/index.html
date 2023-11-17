@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Capstone Project - Damaged Photo Restoration</title>
+    <style>
+        /* CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px;
+        }
+
+        #header h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        #subtitle {
+            font-size: 1.5em;
+            color: #fff;
+            margin: 10px 0;
+            padding: 0 0 0 460px;
+        }
+
+        #upload-message {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 60%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            height: 50%;
+        }
+
+        #upload-message h2 {
+            font-size: 1.5em;
+            margin: 1em;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #team-members {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .team-member {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ddd;
+            margin: 10px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .team-member h3 {
+            margin: 0.8em;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .team-member p {
+            margin: 5px 0;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        .team-member:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Fixed size for images */
+        #image-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        #uploaded-image, #restored-image {
+            max-width: 100%;
+            width: 45%;
+            height: auto;
+            display: none;
+            border-radius: 10px;
+        }
+
+        #uploaded-image {
+            border: 5px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #restored-image {
+            border: 5px solid #007BFF;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+   
+</head>
+<body>
+    <div id="header">
+        <h1>Capstone Project - Damaged Photo Restoration</h1>
+        <div id="subtitle">By using ML, GAN, AWS</div>
+    </div>
+    
+    <div id="upload-message">
+        <h2>Upload Image Here</h2>
+        <form method="POST" enctype="multipart/form-data" action="{{ url_for('index') }}" id="upload-form">
+            <input type="file" name="file" accept="image/*" style="display: none;" id="image-upload" onchange="document.getElementById('upload-form').submit();">
+            <button type="button" onclick="document.getElementById('image-upload').click();">Choose Image</button>
+        </form>
+        <div id="image-container">
+           
+            <img id="uploaded-image" src="data:image/jpeg;base64,{{ uploaded_image }}" alt="Uploaded Image">
+           
+            
+            <img id="restored-image" src="{{ restored_image }}" alt="Restored Image">
+            
+        </div>
+
+    </div>
+    
+    <div id="team-members">
+        <div class="team-member">
+            <h3>Keerthan Gopu</h3>
+            <p>Email: Kgopu@kent.edu</p>
+            <p>Student ID: 811236108</p>
+        </div>
+        
+        <div class="team-member">
+            <h3>Muthu Natesan Muthurajan</h3>
+            <p>Email: mmuthur1@kent.edu</p>
+            <p>Student ID: 811236591</p>
+        </div>
+        
+        <div class="team-member">
+            <h3>Vasanthageethan Arputharaj</h3>
+            <p>Email: varputha@kent.edu</p>
+            <p>Student ID: 811248220</p>
+        </div>
+        
+        <div class="team-member">
+            <h3>Neil Navneet Patel</h3>
+            <p>Email: npate111@kent.edu</p>
+            <p>Student ID: 811254535</p>
+        </div>
+        
+        <div class="team-member">
+            <h3>Suresh Yadav Kotholla</h3>
+            <p>Email: skotholl@kent.edu</p>
+            <p>Student ID: 811259991</p>
+        </div>
+    </div>
+    
+</body>
+</html>
